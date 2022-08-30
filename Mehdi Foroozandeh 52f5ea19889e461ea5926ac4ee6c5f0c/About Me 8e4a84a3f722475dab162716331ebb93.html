@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>About Me</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8e4a84a3-f722-475d-ab16-2716331ebb93" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1661381156934-26ccab4e2cd2?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/user_green.svg"/></div><h1 class="page-title">About Me</h1></header><div class="page-body"><p id="29f58987-77b7-4b6e-8c90-2a5de3ffef17" class="">
+</p><blockquote id="95799d8a-a3e6-47d1-86ea-c61998190ac3" class="">I’m Mehdi, born in Iran, living and studying in Canada. I’m passionate about AI, genomics, and food 🙂. </blockquote><blockquote id="1ae2a8fb-13e9-4a65-82be-5b8ce91e8111" class="">I’m a PhD student and a research assistant in the Computational Biology lab in the Computing Science department at SFU. My research interests are machine learning, probabilistic modelling, and genomics.</blockquote><hr id="3bf8716f-b55c-41f6-be87-5cf35922818b"/><h1 id="202e652c-6101-47a0-b552-6fa8b4eac7e6" class="">📚 Education</h1><p id="faf9ae04-570b-4f8b-a4ac-7f49cd7ad31b" class="">
+</p><div id="c8a5e98b-198d-465d-95f2-c6bf01ab8fc3" class="column-list"><div id="dc577dde-a913-45f1-be86-662c53a763c8" style="width:18.75%" class="column"><p id="c7472b6c-66e4-479f-91fc-85942ed5768f" class=""><strong>2022 - 2026</strong></p></div><div id="afecb3f8-8544-434e-bfea-d9cf3e7ee9ed" style="width:81.25%" class="column"><p id="81145f17-83dd-4481-a6c8-5b80cb1f745e" class=""><strong>Ph.D.</strong> Computing Science, Simon Fraser University</p></div></div><div id="4be4e404-aa17-461b-bac6-c120f40c2d3d" class="column-list"><div id="5afedd6b-0306-400c-a84f-24d41362df36" style="width:18.75%" class="column"><p id="f205cb19-3777-49d7-beb8-5c0ae1e5f729" class=""><strong>2020 - 2022</strong></p></div><div id="f9256e7f-0ec9-430b-9394-855148a918ba" style="width:81.25%" class="column"><p id="3c985f93-24ab-48e5-89a0-504ec849dee6" class=""><strong>MSc.</strong> Computing Science, Simon Fraser University, </p><p id="5f13d0fa-b120-4cd1-b747-8505cbc467e2" class=""><em>CGPA : 4.0 /4.33</em></p></div></div><div id="4845cdc3-49d6-4067-a4d5-35aac68a33a5" class="column-list"><div id="8e6a29e9-6cc0-47de-9abc-2a57603699a7" style="width:18.75%" class="column"><p id="5075f567-3b89-4f54-aed0-0764206dc766" class=""><strong>2015 - 2019</strong></p></div><div id="b1ec9fcc-ae03-4a8d-a78a-0c1faccfbbac" style="width:81.25%" class="column"><p id="99b1e530-1b0f-446c-8da5-b15334a8218a" class=""><strong>BSc. </strong>Cell and Molecular Biology- Microbiology, University of Tehran, <em>GPA (Final Two Years) : 3.68 /4</em></p></div></div><p id="ca731147-0034-4c51-a87f-013da0a03100" class="">
+</p><hr id="d6063345-e434-40d4-9486-fa71785ba173"/><h1 id="121b148e-cda9-463b-b123-8de1c5b7d35a" class="">🎒 Experience </h1><p id="5176fad1-cb3e-4e56-88ca-defa54b3d2f5" class="">
+</p><div id="20210e5d-5b91-4aa6-b45f-781639fe5ad5" class="column-list"><div id="da16f605-19fc-4f22-a06a-87c5c395ef73" style="width:25%" class="column"><p id="6ac0ffd9-70db-4c10-8d15-2aa01b0a5cfc" class=""><strong>September 2020 </strong></p><p id="eb0d726d-592e-4c34-b3ae-e985a66c4bcb" class=""><strong>Present</strong></p></div><div id="b6120936-e458-43bd-bce6-eec0561813ae" style="width:75%" class="column"><p id="38386d8f-3ee8-4211-9d0d-81d86f5b80fd" class="">Research Assistant, SIMON FRASER UNIVERISTY, Department of Computing Sciences</p><p id="57469b04-64bc-4a26-a736-429e624e2f61" class="">
+</p><ul id="297a1cd5-2d61-476d-affe-6a85b14dcc34" class="bulleted-list"><li style="list-style-type:disc">At Libbrecht Computational Biology Lab</li></ul><ul id="454fde2d-beda-43c0-97a9-d40ca5028148" class="bulleted-list"><li style="list-style-type:disc">Research on evaluating the reproducibility of predictions of a class of probabilistic graphical models (SAGA methods).</li></ul><ul id="adaf4e03-008a-434e-9f05-279e50383173" class="bulleted-list"><li style="list-style-type:disc">Research on building and optimizing deep learning models capable of predicting bacterial antibiotic resistance from genome sequence data.</li></ul><ul id="be64a346-3a5d-4e05-a077-1dda662f4dd6" class="bulleted-list"><li style="list-style-type:disc">Machine Learning Probabilistic Modeling Genomics Epigenomics Deep Learning Drug Resistance</li></ul></div></div><p id="83956e33-b5d2-4280-80bb-5c97ba35a82b" class="">
+</p><div id="4ecbbc0a-7994-4527-85f0-e38fc0e205d5" class="column-list"><div id="aea80012-8a3a-4f26-878f-dd34e6b839bd" style="width:25%" class="column"><p id="b9f15cd4-3bac-4729-be37-07d3a46d922d" class=""><strong>January 2019 </strong></p><p id="629be3d3-4c3e-43f2-95f2-7e5216f7f831" class=""><strong>September 2020</strong></p><p id="13d3e3dd-1e0b-4f15-8721-ba69e3e9d804" class="">
+</p></div><div id="429c51ff-87e3-4e30-a620-020721feb3c4" style="width:75%" class="column"><p id="58c27930-4c1d-42b8-9bcf-788d966c66d3" class="">Research Assistant, UNIVERSITY OF TEHRAN, IBB- Department of Bioinformatics</p><p id="3dfd74db-5d6e-4611-aa7d-bda9b3bcae30" class="">
+</p><ul id="1dd31731-4952-43db-a935-f294633f9c43" class="bulleted-list"><li style="list-style-type:disc">At Complex Biological Systems and Bioinformatics (CBB) lab, led by Dr.Kavousi.</li></ul><ul id="f3f8dbd2-65b1-48ea-b6dc-54d82f403bb5" class="bulleted-list"><li style="list-style-type:disc">Research on developing machine learning and deep learning models for predicting enzyme properties.</li></ul><ul id="6e4f2476-dce9-416e-be1d-c55c97c0f151" class="bulleted-list"><li style="list-style-type:disc">Research on developing machine learning and deep learning models for predicting enzyme properties.</li></ul><ul id="23accf16-5eb1-44b7-80b0-5e4fc6fdba86" class="bulleted-list"><li style="list-style-type:disc">Research on the discovery of novel enzymes with particular applications from metagenomic sources</li></ul><ul id="725c7661-8c38-4a02-9c63-0bf56d62dc7d" class="bulleted-list"><li style="list-style-type:disc">Collaboration in writing and editing academic publications</li></ul><ul id="a64a5a66-faaa-4d75-8884-be1d678c9a22" class="bulleted-list"><li style="list-style-type:disc">Machine Learning Metagenomics Enzymes Bioinformatics</li></ul></div></div><hr id="b7427384-ce3b-4fb4-b5f2-b392102a2654"/><h1 id="d541ff7d-de10-40ba-9ac3-611cf14b06e0" class="">🛠 Skills</h1><p id="64c82d63-9f18-4764-ab89-f65a43e4d8f5" class="">
+</p><div id="bcc349ef-054e-45e0-b2fe-c4436ee04caa" class="column-list"><div id="4e39930d-5a50-4c00-9432-9546b029b3b6" style="width:25%" class="column"><p id="ee125c62-e683-4bb9-8e23-23ec8ba7bb7a" class=""><strong>Programming</strong></p></div><div id="f601dbf6-82c0-41a2-838e-6b521e03f17d" style="width:75%" class="column"><p id="bc314527-0a47-4692-8f39-d103896c27f9" class="">Python, MATLAB</p></div></div><div id="8600dee7-73d3-47fc-8f89-da069a460812" class="column-list"><div id="dd80e517-c34d-400c-8540-385d9d6470a2" style="width:25%" class="column"><p id="48c0824c-2ed0-4375-bdcf-7a27d22df6ef" class=""><strong>Tools and Software</strong></p></div><div id="4a09672b-fb8e-4151-8605-b5dd055845ab" style="width:75%" class="column"><p id="7a280ded-9189-4e46-b408-1006f590c806" class="">TensorFlow, Keras, Scikit-learn, Scikit-optimize, Numpy, Pandas, Biopython, NCBI Toolkit, Segway, ChromHMM</p></div></div><div id="00310a2f-41de-464f-8d9c-e6d194f5245f" class="column-list"><div id="3dac0132-746c-44bf-91f4-6d860bf3dbe1" style="width:25%" class="column"><p id="af0a130a-b49c-4de5-b3d3-dc33408ccf70" class=""><strong>Other</strong></p></div><div id="85e19078-d901-4827-9e70-bcafd6d55a8b" style="width:75%" class="column"><p id="d5fc127f-28ec-4fdf-849a-9d475fc21aaa" class="">Unix Shell Scripting, Docker, LATEX, Linux, Web Scraping
+</p></div></div><div id="1f555c7b-8e3c-426d-9053-6cd1798c5b13" class="column-list"><div id="6ced9155-773c-48b2-83ef-49462903a7bc" style="width:25%" class="column"><p id="24b8449e-77a7-430e-9f90-b3750f61e4c1" class="">
+<strong>Laboratory Skills</strong></p></div><div id="eb9a608d-b62a-4ad7-b181-76a456d78950" style="width:75%" class="column"><p id="31da18d3-d9bd-4b7f-91f6-6a3bea27fbae" class="">Microbial Culture, PCR, DNA extraction, Gene Cloning, Gel Electrophoresis
+</p></div></div><div id="6087b670-e4c3-49ad-a07e-486d3dffd5cf" class="column-list"><div id="8821d015-60c6-4620-a9a8-5ac6987f0e1e" style="width:25%" class="column"><p id="03b2d2a4-6d75-457e-bcf6-97959fe1c4f4" class=""><strong>Languages</strong></p></div><div id="e72d0bff-54eb-42f4-b67c-14655ff54e0c" style="width:75%" class="column"><p id="25a90e52-e2e5-4e16-863d-6ad0205a7b74" class="">English, Persian (Native)</p></div></div><hr id="32ca46b3-7f53-49b0-b7c5-e03326d7ebee"/><h1 id="e8d9d478-d01f-44f2-b321-021b16d9af60" class="">📜 Publications</h1><p id="c29ba4b5-6fb6-4123-9e8d-879e908b52c9" class="">
+</p><ul id="ed8beb8a-4492-44ec-974e-f5015fa171a1" class="bulleted-list"><li style="list-style-type:disc">Foroozandeh Shahraki, Mehdi, <em>et al. </em>”A computational learning paradigm to targeted discovery of biocatalysts from metagenomic data : a case study of lipase identification” Biotechnology and Bioengineering :21-130.R1 (2022).</li></ul><p id="df8319d6-967c-4672-8826-2488d67d1695" class="">
+</p><ul id="7cdea6f0-3e99-4aff-8560-ed402cc6d5e8" class="bulleted-list"><li style="list-style-type:disc">Foroozandeh Shahraki, Mehdi, <em>et al. </em>”A generalized machine-learning aided method for targeted identification of industrial enzymes from metagenome : A xylanase temperature dependence case study.” Biotechnology and Bioengineering (2020).</li></ul><p id="6c0646a6-d045-40d4-b370-29046921c11a" class="">
+</p><ul id="ea9047a7-9bd0-4f02-908a-b49c25c45287" class="bulleted-list"><li style="list-style-type:disc">Foroozandeh Shahraki, Mehdi, <em>et al. </em>”MCIC : Automated Identification of Cellulases From Metagenomic Data and Characterization Based on Temperature and pH Dependence.” Frontiers in microbiology 11 (2020).</li></ul><p id="e70400cd-cf6f-413c-86e7-02e09a2e4330" class="">
+</p><ul id="f86a244d-231d-4ed8-bc4c-f3018cf072d6" class="bulleted-list"><li style="list-style-type:disc">Maleki, Morteza, <em>et al. </em>”A novel thermostable cellulase cocktail enhances lignocellulosic bioconversion and biorefining in a broad range of pH.” International journal of biological macromolecules 154 (2020) : 349-360.</li></ul><p id="47451338-9618-40c1-97c3-af0ae1718194" class="">
+</p><ul id="f9270813-6854-4005-800f-8be0a562d73d" class="bulleted-list"><li style="list-style-type:disc">Ariaeenejad, Shohreh, <em>et al. </em>”A novel high performance in-silico screened metagenome-derived alkali-thermostable endo-β-1, 4-glucanase for lignocellulosic biomass hydrolysis in the harsh conditions.” BMC biotechnology 20.1 (2020) : 1-13.</li></ul><p id="5d845cca-48e7-4c95-bae3-bf7947f48f06" class="">
+</p><ul id="e7a9ae3c-bd72-4d58-a2dc-4cfbd558545d" class="bulleted-list"><li style="list-style-type:disc">Foroozandeh Shahraki, Mehdi, <em>et al. </em>”Evaluating the reproducibility of segmentation and genome annotation (SAGA) algorithms” Poster at Machine Learning in Computational Biology 2021 (full submission in progress).</li></ul><hr id="e4077ebd-83bf-4b5b-a231-bd2b76f82657"/><p id="02e40b14-1693-4652-9f9b-b5c706f6cd11" class="">
+</p></div></article></body></html>
