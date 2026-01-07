@@ -175,8 +175,8 @@ p, span, div, a, li, td, th, label, input, textarea, select, button {
 }
 
 .avatar {
-  width: 171px;
-  height: 171px;
+  width: 205px;
+  height: 205px;
   border-radius: 50%;
   margin-bottom: 1.5rem;
   object-fit: cover;
