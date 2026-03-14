@@ -968,6 +968,11 @@ p, span, div, a, li, td, th, label, input, textarea, select, button {
   line-height: 1.4;
 }
 
+.blog-card-title[dir="rtl"] {
+  text-align: right;
+  direction: rtl;
+}
+
 .blog-snippet {
   font-family: "Inter", sans-serif;
   font-size: 0.95rem;
