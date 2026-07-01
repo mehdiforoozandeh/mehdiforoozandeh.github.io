@@ -17,11 +17,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Tenor+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
       --font-body:'Inter',system-ui,sans-serif;
-      --font-display:'Tenor Sans',serif;
+      --font-display:'JetBrains Mono',ui-monospace,monospace;
     }
     /* ---------- LIGHT (Claude milk) ---------- */
     html[data-theme="light"]{
@@ -105,8 +105,8 @@
     }
     .photo-wrap{position:relative;border-radius:50%}
     .photo-wrap::after{content:'';position:absolute;inset:-14px;border-radius:50%;box-shadow:0 0 60px -10px rgba(120,150,190,.35);pointer-events:none}
-    .name{font-family:var(--font-display);margin:16px 0 0;font-weight:400;letter-spacing:.4px;white-space:nowrap;font-size:clamp(20px,2.65vw,28.5px);text-align:center;line-height:1.15}
-    .tagline{margin:5px 0 0;color:var(--muted);font-size:clamp(11.5px,1.3vw,14.5px);text-align:center;letter-spacing:.2px;white-space:nowrap}
+    .name{font-family:var(--font-display);margin:16px 0 0;font-weight:500;letter-spacing:-.2px;white-space:nowrap;font-size:clamp(22px,2.9vw,31px);text-align:center;line-height:1.15}
+    .tagline{font-family:var(--font-display);margin:7px 0 0;color:var(--muted);font-size:clamp(12px,1.35vw,15px);text-align:center;letter-spacing:0;white-space:nowrap}
     .socials-row{display:flex;gap:11px;margin-top:18px;justify-content:center}
     .socials-row a{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:var(--panel);border:1px solid var(--border);box-shadow:var(--shadow-sm);transition:transform .2s,border-color .2s}
     .socials-row a:hover{transform:translateY(-3px);border-color:var(--ring)}
@@ -115,7 +115,7 @@
     /* ---------- Node labels ---------- */
     .leaf{
       position:absolute;display:inline-flex;align-items:center;gap:8px;
-      font-family:var(--font-display);font-size:clamp(14.5px,1.5vw,16.5px);letter-spacing:.3px;color:var(--text);
+      font-family:var(--font-display);font-size:clamp(14px,1.5vw,16px);letter-spacing:-.1px;color:var(--text);
       background:var(--panel);border:1px solid var(--border);
       padding:6px 14px;border-radius:10px;cursor:pointer;white-space:nowrap;
       box-shadow:var(--shadow-sm);z-index:7;opacity:0;
@@ -149,58 +149,58 @@
     @keyframes rise{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
 
     /* ---------- Panel content ---------- */
-    .p-eyebrow{display:flex;align-items:center;gap:9px;color:var(--accent,#7d94ac);font-size:13px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;margin:0 0 6px}
+    .p-eyebrow{display:flex;align-items:center;gap:9px;font-family:var(--font-display);color:var(--accent,#7d94ac);font-size:12.5px;font-weight:500;letter-spacing:1px;text-transform:uppercase;margin:0 0 8px}
     .p-eyebrow .dot{width:9px;height:9px;border-radius:50%;background:var(--accent,#7d94ac)}
-    .p-title{font-family:var(--font-display);font-weight:400;font-size:28.5px;margin:0 0 4px}
-    .p-lead{color:var(--muted);margin:0 0 22px;font-size:15.5px;line-height:1.6}
+    .p-title{font-family:var(--font-display);font-weight:500;font-size:29px;margin:0 0 4px}
+    .p-lead{color:var(--muted);margin:0 0 22px;font-size:13px;line-height:1.65}
     .p-lead:last-child{margin-bottom:0}
     .timeline{display:flex;flex-direction:column;gap:18px}
     .t-item{padding-left:16px;border-left:2px solid var(--border);position:relative}
     .t-item::before{content:'';position:absolute;left:-6px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--accent,#7d94ac)}
-    .t-item h4{margin:0;font-size:16.5px;font-weight:600}
-    .t-item .org{margin:2px 0 0;font-size:15px;color:var(--text)}
-    .t-item .date{margin:3px 0 0;font-size:13px;color:var(--muted);letter-spacing:.3px}
+    .t-item h4{margin:0;font-size:13.5px;font-weight:600}
+    .t-item .org{margin:2px 0 0;font-size:12.5px;color:var(--text)}
+    .t-item .date{margin:4px 0 0;font-family:var(--font-display);font-size:12.5px;color:var(--muted);letter-spacing:0}
     .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-    .pill{font-size:13px;color:var(--muted);background:var(--panel-2);border:1px solid var(--border);padding:5px 11px;border-radius:999px}
+    .pill{font-size:11px;color:var(--muted);background:var(--panel-2);border:1px solid var(--border);padding:5px 11px;border-radius:999px}
     .proj{padding:16px 0;border-top:1px solid var(--border)}
     .proj:first-of-type{border-top:none;padding-top:0}
     .proj-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .proj-head h4{margin:0;font-size:17.5px;font-weight:600}
-    .proj p{margin:6px 0 8px;font-size:15px;line-height:1.55;color:var(--muted)}
+    .proj-head h4{margin:0;font-size:14.5px;font-weight:600}
+    .proj p{margin:6px 0 8px;font-size:12.5px;line-height:1.55;color:var(--muted)}
     .proj a.gh{color:var(--muted);display:inline-flex;transition:color .2s;flex:none}
     .proj a.gh:hover{color:var(--accent)}
     .proj a.gh svg{width:18px;height:18px}
-    .pub-year{font-family:var(--font-display);font-size:16.5px;color:var(--accent,#7d94ac);margin:20px 0 10px;letter-spacing:.5px}
+    .pub-year{font-family:var(--font-display);font-size:17px;font-weight:500;color:var(--accent,#7d94ac);margin:20px 0 10px;letter-spacing:0}
     .pub-year:first-child{margin-top:0}
     .pub{margin:0 0 14px}
-    .pub .pt{margin:0;font-size:16px;font-weight:600;line-height:1.4}
-    .pub .pa{margin:3px 0 0;font-size:14px;color:var(--muted);line-height:1.5}
-    .pub .pj{margin:2px 0 0;font-size:14px;color:var(--text);font-style:italic}
+    .pub .pt{margin:0;font-size:13px;font-weight:600;line-height:1.4}
+    .pub .pa{margin:3px 0 0;font-size:11.5px;color:var(--muted);line-height:1.5}
+    .pub .pj{margin:2px 0 0;font-size:11.5px;color:var(--text);font-style:italic}
     .blogcard{padding:18px 0;border-top:1px solid var(--border)}
     .blogcard:first-of-type{border-top:none;padding-top:0}
-    .blogmeta{display:flex;gap:8px;font-size:13px;color:var(--muted);margin-bottom:8px}
-    .blogcard h4{margin:0 0 8px;font-size:18px;font-weight:600;line-height:1.35}
-    .blogcard p{margin:0 0 10px;font-size:15px;line-height:1.6;color:var(--muted)}
+    .blogmeta{display:flex;gap:8px;font-family:var(--font-display);font-size:12.5px;color:var(--muted);margin-bottom:10px}
+    .blogcard h4{margin:0 0 8px;font-size:15px;font-weight:600;line-height:1.35}
+    .blogcard p{margin:0 0 10px;font-size:12.5px;line-height:1.6;color:var(--muted)}
     .contact-row{display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1px solid var(--border)}
     .contact-row:first-of-type{border-top:none}
     .contact-row .ico{width:22px;height:22px;flex:none}
-    .contact-row .k{font-size:13px;color:var(--muted);letter-spacing:.4px;text-transform:uppercase}
-    .contact-row .v{font-size:16px;margin-top:1px}
-    .btn{display:inline-flex;align-items:center;gap:9px;margin-top:22px;background:var(--accent,#7d94ac);color:#fff;border:none;border-radius:12px;padding:11px 18px;font-family:var(--font-body);font-size:15.5px;font-weight:600;text-decoration:none;cursor:pointer;transition:transform .2s,filter .2s}
+    .contact-row .k{font-family:var(--font-display);font-size:12px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase}
+    .contact-row .v{font-size:13px;margin-top:3px}
+    .btn{display:inline-flex;align-items:center;gap:9px;margin-top:22px;background:var(--accent,#7d94ac);color:#fff;border:none;border-radius:12px;padding:10px 16px;font-family:var(--font-body);font-size:13px;font-weight:600;text-decoration:none;cursor:pointer;transition:transform .2s,filter .2s}
     .btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
-    .btn img{width:16px;height:16px;filter:brightness(0) invert(1)}
-    .morelink{display:inline-block;margin-top:18px;color:var(--accent,#7d94ac);font-size:15px;font-weight:600;text-decoration:none}
+    .btn img{width:15px;height:15px;filter:brightness(0) invert(1)}
+    .morelink{display:inline-block;margin-top:18px;color:var(--accent,#7d94ac);font-size:12.5px;font-weight:600;text-decoration:none}
     .morelink:hover{text-decoration:underline}
-    a.read{color:var(--accent,#7d94ac);font-size:15px;font-weight:600;text-decoration:none}
+    a.read{color:var(--accent,#7d94ac);font-size:12.5px;font-weight:600;text-decoration:none}
     a.read:hover{text-decoration:underline}
     [dir="rtl"]{text-align:right}
 
-    .hint{position:fixed;left:0;right:0;bottom:14px;text-align:center;color:var(--muted);font-size:13px;letter-spacing:.3px;z-index:6;opacity:0;animation:fadein 1s ease 1.2s forwards;pointer-events:none}
+    .hint{position:fixed;left:0;right:0;bottom:14px;text-align:center;font-family:var(--font-display);color:var(--muted);font-size:12.5px;letter-spacing:0;z-index:6;opacity:0;animation:fadein 1s ease 1.2s forwards;pointer-events:none}
     @keyframes fadein{to{opacity:.7}}
 
     @media (max-width:640px){
-      .leaf{font-size:11.5px;padding:4px 9px}
-      .tagline{font-size:11.5px}
+      .leaf{font-size:11.5px;padding:4px 8px;letter-spacing:-.2px}
+      .tagline{font-size:12px}
       .socials-row a{width:34px;height:34px}
       .socials-row img{width:16px;height:16px}
     }
@@ -213,7 +213,7 @@
     }
     @media (max-width:520px){
       .sheet{padding:30px 22px 34px}
-      .p-title{font-size:25px}
+      .p-title{font-size:26px}
     }
   </style>
 </head>
@@ -414,7 +414,7 @@
       const cy = Math.max(photoR + (short?84:118), H*(short?0.44:0.43));
       root.style.left='50%'; root.style.top=(cy-photoR)+'px'; root.style.transform='translateX(-50%)';
 
-      const sideOffset = Math.max(30, Math.min(195, (cx - photoR) - 148));
+      const sideOffset = Math.max(narrow?20:30, Math.min(195, (cx - photoR) - 148));
       const nodeXL = cx - photoR - sideOffset;
       const nodeXR = cx + photoR + sideOffset;
       const laneGap = Math.min(photoR + 62, H*(short?0.15:0.185));
