@@ -107,6 +107,7 @@
     .photo-wrap::after{content:'';position:absolute;inset:-14px;border-radius:50%;box-shadow:0 0 60px -10px rgba(120,150,190,.35);pointer-events:none}
     .name{font-family:var(--font-display);margin:16px 0 0;font-weight:500;letter-spacing:-.2px;white-space:nowrap;font-size:clamp(22px,2.9vw,31px);text-align:center;line-height:1.15}
     .tagline{font-family:var(--font-display);margin:7px 0 0;color:var(--muted);font-size:clamp(12px,1.35vw,15px);text-align:center;letter-spacing:0;white-space:nowrap}
+    .tagline-2{margin-top:3px}
     .socials-row{display:flex;gap:11px;margin-top:18px;justify-content:center}
     .socials-row a{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:var(--panel);border:1px solid var(--border);box-shadow:var(--shadow-sm);color:#7d9c66;transition:transform .2s,border-color .2s}
     .socials-row a:hover{transform:translateY(-3px);border-color:#7d9c66}
@@ -235,6 +236,7 @@
     <div class="identity" id="identity">
       <h1 class="name">Mehdi Foroozandeh</h1>
       <p class="tagline">Ph.D. Candidate · Simon Fraser University</p>
+      <p class="tagline tagline-2">Graduate Scientist · Roche</p>
       <div class="socials-row">
         <a href="https://github.com/mehdiforoozandeh" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 21 21" fill="none" aria-hidden="true"><path d="M13.125 19.25V15.75C13.2467 14.6539 12.9324 13.5539 12.25 12.6875C14.875 12.6875 17.5 10.9375 17.5 7.875C17.57 6.78125 17.2638 5.705 16.625 4.8125C16.87 3.80625 16.87 2.75625 16.625 1.75C16.625 1.75 15.75 1.75 14 3.0625C11.69 2.625 9.31 2.625 7 3.0625C5.25 1.75 4.375 1.75 4.375 1.75C4.1125 2.75625 4.1125 3.80625 4.375 4.8125C3.73789 5.7014 3.42867 6.78369 3.5 7.875C3.5 10.9375 6.125 12.6875 8.75 12.6875C8.40875 13.1162 8.155 13.6062 8.00625 14.1312C7.8575 14.6562 7.81375 15.2075 7.875 15.75V19.25" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.875 15.75C3.92875 17.5 3.5 14 1.75 14" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a href="https://scholar.google.com/citations?user=J2eelpMAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar"><svg viewBox="0 0 21 21" fill="none" aria-hidden="true"><path d="M18.7424 9.55657C18.8991 9.48747 19.032 9.37394 19.1248 9.23003C19.2175 9.08612 19.266 8.91817 19.2642 8.74697C19.2625 8.57577 19.2105 8.40886 19.1148 8.2669C19.0191 8.12494 18.8839 8.01417 18.7258 7.94832L11.2262 4.53232C10.9982 4.42833 10.7505 4.37451 10.4999 4.37451C10.2494 4.37451 10.0017 4.42833 9.7737 4.53232L2.27495 7.94482C2.11917 8.01305 1.98665 8.12519 1.89359 8.26754C1.80053 8.40988 1.75098 8.57626 1.75098 8.74632C1.75098 8.91639 1.80053 9.08277 1.89359 9.22511C1.98665 9.36746 2.11917 9.4796 2.27495 9.54782L9.7737 12.9673C10.0017 13.0713 10.2494 13.1251 10.4999 13.1251C10.7505 13.1251 10.9982 13.0713 11.2262 12.9673L18.7424 9.55657Z" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.25 8.75V14" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.25 10.9375V14C5.25 14.6962 5.80312 15.3639 6.78769 15.8562C7.77226 16.3484 9.10761 16.625 10.5 16.625C11.8924 16.625 13.2277 16.3484 14.2123 15.8562C15.1969 15.3639 15.75 14.6962 15.75 14V10.9375" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -514,7 +516,8 @@
       sheet.style.setProperty('--accent',accentOf(tp));
       overlay.hidden=false; sheet.scrollTop=0;
       overlay.querySelector('.sheet-close').focus();
-      track('branch_click',{branch:tp.id});
+      track('branch_click',{branch:tp.id, branch_label:tp.label});  // rollup event (+ params)
+      track('branch_'+tp.id,{branch_label:tp.label});               // per-branch event, shows up in GA with no setup
     }
     function close(){ overlay.hidden=true; }
     overlay.addEventListener('click',e=>{ if(e.target.hasAttribute('data-close')) close(); });
